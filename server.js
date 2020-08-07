@@ -9,7 +9,7 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
     const server = express();
 
-    server.get('/user', (req, res) => {
+    server.get('*', (req, res) => {
         return handle(req, res);
     })
 
