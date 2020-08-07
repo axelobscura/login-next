@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { formatWithValidation } from 'next/dist/next-server/lib/utils';
+import { loginUser } from '../lib/auth';
 
 class LoginForm extends Component {
 
@@ -15,8 +15,10 @@ class LoginForm extends Component {
     }
 
     handleSubmit = event => {
+        const { email, password } = this.state;
         event.preventDefault();
         console.log(this.state);
+        loginUser(email, password)
     }
 
     render(){
